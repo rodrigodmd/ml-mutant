@@ -1,21 +1,15 @@
 package evaluator
 
-
+import "log"
 
 func (e *evaluator) shouldStop() bool {
 	return e.stop
 }
 
 func (e *evaluator) safeStop() {
-	e.mutex.Lock()
-	defer e.mutex.Unlock()
+	//e.mutex.Lock()
+	//defer e.mutex.Unlock()
 	e.stop = true
-}
-
-func (e *evaluator) safeAddWaitGroup() {
-	e.mutex.Lock()
-	defer e.mutex.Unlock()
-	e.wg.Add(1)
 }
 
 func (e *evaluator) charComparator() func(uint8) {
@@ -29,9 +23,10 @@ func (e *evaluator) charComparator() func(uint8) {
 			count = 1
 		}
 
-		//log.Print(lastChar, " vs " , char, "    Count: " , count)
+		//log.Print(lastChar, " vs ", char, "    Count: ", count)
 		if count == MIN_LETTER_SEQUENCE {
-			e.cantChan <- 1
+			log.Print("FOUND")
+			e.chFound <- 1
 		}
 		lastChar = char
 	}

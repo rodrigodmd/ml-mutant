@@ -4,17 +4,18 @@ import "sync"
 
 func New(dna *[]string) *evaluator {
 	return &evaluator{
-		dna:      dna,
-		cantChan: make(chan int, 1),
-		stop:     false,
+		dna:            dna,
+		chFound:        make(chan int),
+		chProgress:     make(chan int),
+		stop:           false,
 	}
 
 }
 
 type evaluator struct {
-	dna      *[]string
-	wg       sync.WaitGroup
-	cantChan chan int
-	stop     bool
-	mutex    sync.Mutex
+	dna *[]string
+	chFound        chan int
+	chProgress     chan int
+	stop           bool
+	mutex          sync.Mutex
 }

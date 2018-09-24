@@ -1,4 +1,4 @@
-package mlMutant
+package mlmutant
 
 import (
 	"testing"
@@ -22,9 +22,24 @@ func TestNullDna(t *testing.T) {
 	log.Print("Result: ", res)
 }
 
+func TestNoMatchLogic(t *testing.T) {
+	dna := []string{"ATGC", "CAGT", "TTAT", "AGAA"}
+	res, err := IsMutant(dna)
+
+	if err != nil {
+		t.Error(err)
+	}
+
+	if res {
+		t.Errorf("isMutant should return false")
+	}
+
+	log.Print("Result: ", res)
+}
+
 func TestDnaWithInvalidLetters(t *testing.T) {
 
-	dna := []string{"ATGCGA","CAGTGC","TTZZZZ","AGAAGG","CCCCTA","TCACTG"};
+	dna := []string{"ATGCGA", "CAGTGC", "TTZZZZ", "AGAAGG", "CCCCTA", "TCACTG"}
 	res, err := IsMutant(dna)
 
 	if err != nil {
@@ -41,7 +56,7 @@ func TestDnaWithInvalidLetters(t *testing.T) {
 }
 
 func TestHorizontalLogic(t *testing.T) {
-	dna := []string{"ATGCGA","CAGTGC","TTTTGT","AGAAGG","CCCCTA","TCACTG"};
+	dna := []string{"ATGCGA", "CAGTGC", "TTTTGT", "AGAAGG", "CCCCTA", "TCACTG"}
 	res, err := IsMutant(dna)
 
 	if err != nil {
@@ -56,7 +71,7 @@ func TestHorizontalLogic(t *testing.T) {
 }
 
 func TestVerticalLogic(t *testing.T) {
-	dna := []string{"ATGCGA","AAGTGC","ATATGT","AGAAGG","CACCTA","TCACTG"};
+	dna := []string{"ATGCGA", "AAGTGC", "ATATGT", "AGAAGG", "CACCTA", "TCACTG"}
 	res, err := IsMutant(dna)
 
 	if err != nil {
@@ -71,7 +86,7 @@ func TestVerticalLogic(t *testing.T) {
 }
 
 func TestHorizontalAndVerticalLogic(t *testing.T) {
-	dna := []string{"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
+	dna := []string{"ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"}
 	res, err := IsMutant(dna)
 
 	if err != nil {

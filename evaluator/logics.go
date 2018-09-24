@@ -2,6 +2,7 @@ package evaluator
 
 import (
 	"fmt"
+	"sync"
 )
 
 const (
@@ -10,37 +11,38 @@ const (
 )
 
 func (e *evaluator) Wait() bool {
-	defer close(e.cantChan)
+	var wg sync.WaitGroup
+	wg.Add(1)
 
-	count := 0
-	func() {
-		e.wg.Add(1)
-		defer e.wg.Done()
-
-		for {
-			_, more := <-e.cantChan
-			if more {
-				count++
-				fmt.Println("found one more: ", count)
-				if count >= MIN_COUNT {
-					e.safeStop()
-					return
-				}
-			} else {
-				fmt.Println("completed all the evaluation")
-				return
+	isMutant := false
+	//func (){
+	//defer wg.Done()
+	foundCount, progressCount := 0, 0
+	for{
+		select {
+		case <-e.chFound:
+			foundCount++
+			fmt.Println("got found")
+			if foundCount == MIN_COUNT{
+				e.safeStop()
+				isMutant = true
+				return true
+			}
+		case delta := <-e.chProgress:
+			if progressCount+=delta; progressCount == 0{
+				isMutant = false
+				return false
 			}
 		}
-	}()
+	}
+	//}()
 
-	e.wg.Wait()
-
-	return count >= MIN_COUNT
+	//wg.Wait()
+	return isMutant
 }
 
 func (e *evaluator) Horizontal() {
-	e.wg.Add(1)
-	defer e.wg.Done()
+	e.chProgress <- 1
 
 	for _, row := range *e.dna {
 		if e.shouldStop() {
@@ -51,11 +53,12 @@ func (e *evaluator) Horizontal() {
 			compare(row[key])
 		}
 	}
+	fmt.Println("DONE Horizontal")
+	e.chProgress <- -1
 }
 
 func (e *evaluator) Vertical() {
-	e.wg.Add(1)
-	defer e.wg.Done()
+	e.chProgress <- 1
 
 	length := len(*e.dna)
 	for x := 0; x < length; x++ {
@@ -67,11 +70,12 @@ func (e *evaluator) Vertical() {
 			compare((*e.dna)[y][x])
 		}
 	}
+	fmt.Println("DONE Vertical")
+	e.chProgress <- -1
 }
 
 func (e *evaluator) DiagonalRight() {
-	e.wg.Add(1)
-	defer e.wg.Done()
+	e.chProgress <- 1
 
 	length := len(*e.dna)
 	compare := e.charComparator()
@@ -90,14 +94,15 @@ func (e *evaluator) DiagonalRight() {
 			compareDown((*e.dna)[a+b][b])
 		}
 	}
+	fmt.Println("DONE DiagonalRight")
+	e.chProgress <- -1
 }
 
 func (e *evaluator) DiagonalLeft() {
-	e.wg.Add(1)
-	defer e.wg.Done()
+	e.chProgress <- 1
 
 	length := len(*e.dna)
-	corr := length-1
+	corr := length - 1
 	compare := e.charComparator()
 	for a := 0; a < length; a++ {
 		compare((*e.dna)[a][corr-a])
@@ -114,4 +119,6 @@ func (e *evaluator) DiagonalLeft() {
 			compareDown((*e.dna)[a+b][corr-a])
 		}
 	}
+	fmt.Println("DONE DiagonalLeft")
+	e.chProgress <- -1
 }

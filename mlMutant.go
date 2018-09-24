@@ -1,18 +1,18 @@
-package mlMutant
+package mlmutant
 
 import (
 	"errors"
-	"strings"
-	"github.com/rodrigodmd/ml-mutant/evaluator"
-	"time"
 	"fmt"
-)
+	"strings"
+	"time"
 
+	"github.com/rodrigodmd/ml-mutant/evaluator"
+)
 
 func IsMutant(dna []string) (bool, error) {
 	start := time.Now()
 
-	if !checkStructure(&dna){
+	if !checkStructure(&dna) {
 		return false, errors.New("Invalid DNA structure")
 	}
 
@@ -28,8 +28,7 @@ func IsMutant(dna []string) (bool, error) {
 	return result, nil
 }
 
-
-func checkStructure(dna *[]string) bool{
+func checkStructure(dna *[]string) bool {
 	length := len(*dna)
 	if length == 0 {
 		return false
@@ -51,7 +50,3 @@ func checkStructure(dna *[]string) bool{
 	}
 	return true
 }
-
-
-
-
