@@ -3,19 +3,19 @@ package evaluator
 import "sync"
 
 func New(dna *[]string) *evaluator {
-	return &evaluator{
-		dna:            dna,
-		chFound:        make(chan int),
-		chProgress:     make(chan int),
-		stop:           false,
+	e := evaluator{
+		dna:      dna,
+		count:    0,
+		isMutant: false,
 	}
-
+	e.wg.Add(4)
+	return &e
 }
 
 type evaluator struct {
-	dna *[]string
-	chFound        chan int
-	chProgress     chan int
-	stop           bool
-	mutex          sync.Mutex
+	dna      *[]string
+	count    int
+	isMutant bool
+	wg       sync.WaitGroup
+	mutex    sync.Mutex
 }

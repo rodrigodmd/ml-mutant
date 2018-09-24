@@ -2,7 +2,6 @@ package evaluator
 
 import (
 	"fmt"
-	"sync"
 )
 
 const (
@@ -11,38 +10,13 @@ const (
 )
 
 func (e *evaluator) Wait() bool {
-	var wg sync.WaitGroup
-	wg.Add(1)
-
-	isMutant := false
-	//func (){
-	//defer wg.Done()
-	foundCount, progressCount := 0, 0
-	for{
-		select {
-		case <-e.chFound:
-			foundCount++
-			fmt.Println("got found")
-			if foundCount == MIN_COUNT{
-				e.safeStop()
-				isMutant = true
-				return true
-			}
-		case delta := <-e.chProgress:
-			if progressCount+=delta; progressCount == 0{
-				isMutant = false
-				return false
-			}
-		}
-	}
-	//}()
-
-	//wg.Wait()
-	return isMutant
+	e.wg.Wait()
+	return e.isMutant
 }
 
 func (e *evaluator) Horizontal() {
-	e.chProgress <- 1
+	defer e.wg.Done()
+	defer fmt.Println("DONE Horizontal")
 
 	for _, row := range *e.dna {
 		if e.shouldStop() {
@@ -53,12 +27,11 @@ func (e *evaluator) Horizontal() {
 			compare(row[key])
 		}
 	}
-	fmt.Println("DONE Horizontal")
-	e.chProgress <- -1
 }
 
 func (e *evaluator) Vertical() {
-	e.chProgress <- 1
+	defer e.wg.Done()
+	defer fmt.Println("DONE Vertical")
 
 	length := len(*e.dna)
 	for x := 0; x < length; x++ {
@@ -70,12 +43,12 @@ func (e *evaluator) Vertical() {
 			compare((*e.dna)[y][x])
 		}
 	}
-	fmt.Println("DONE Vertical")
-	e.chProgress <- -1
+
 }
 
 func (e *evaluator) DiagonalRight() {
-	e.chProgress <- 1
+	defer e.wg.Done()
+	defer fmt.Println("DONE DiagonalRight")
 
 	length := len(*e.dna)
 	compare := e.charComparator()
@@ -94,12 +67,12 @@ func (e *evaluator) DiagonalRight() {
 			compareDown((*e.dna)[a+b][b])
 		}
 	}
-	fmt.Println("DONE DiagonalRight")
-	e.chProgress <- -1
+
 }
 
 func (e *evaluator) DiagonalLeft() {
-	e.chProgress <- 1
+	defer e.wg.Done()
+	defer fmt.Println("DONE DiagonalLeft")
 
 	length := len(*e.dna)
 	corr := length - 1
@@ -119,6 +92,4 @@ func (e *evaluator) DiagonalLeft() {
 			compareDown((*e.dna)[a+b][corr-a])
 		}
 	}
-	fmt.Println("DONE DiagonalLeft")
-	e.chProgress <- -1
 }

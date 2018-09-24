@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97801f1c-0873-4c0a-8237-d36b24ed5df4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluator/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/evaluator/init.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluator/logics.go" beforeDir="false" afterPath="$PROJECT_DIR$/evaluator/logics.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluator/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/evaluator/utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlMutant.go" beforeDir="false" afterPath="$PROJECT_DIR$/mlMutant.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mutant_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/mutant_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,30 +17,31 @@
     <session id="2123245041">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="3" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="go" value="7" />
+          <entry key="go" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="7" />
+          <entry key="Go" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="366" />
+          <entry key="go" value="536" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="366" />
+          <entry key="Go" value="536" />
         </counts>
       </usages-collector>
     </session>
@@ -53,43 +52,7 @@
         <entry file="file://$PROJECT_DIR$/mutant_test.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/evaluator/utils.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mlMutant.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/evaluator/logics.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-83">
-              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/testing/testing.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12120">
-              <caret line="824" selection-start-line="824" selection-end-line="824" />
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -97,13 +60,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/evaluator/init.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="165">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mlMutant.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/evaluator/utils.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/evaluator/logics.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>MIN_LETTER_SEQUENCE</find>
+    </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.10.3/libexec" />
   <component name="Git.Settings">
@@ -113,9 +108,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mutant_test.go" />
+        <option value="$PROJECT_DIR$/evaluator/utils.go" />
         <option value="$PROJECT_DIR$/mlMutant.go" />
         <option value="$PROJECT_DIR$/evaluator/init.go" />
-        <option value="$PROJECT_DIR$/evaluator/utils.go" />
         <option value="$PROJECT_DIR$/evaluator/logics.go" />
       </list>
     </option>
@@ -173,7 +168,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestHorizontalLogic in github.com/rodrigodmd/ml-mutant">
+  <component name="RunManager" selected="Go Test.go test github.com/rodrigodmd/ml-mutant">
     <configuration name="TestHorizontalAndVerticalLogic in github.com/rodrigodmd/ml-mutant" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="ml-mutant" />
       <working_directory value="$PROJECT_DIR$" />
@@ -242,51 +237,51 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestHorizontalLogic in github.com/rodrigodmd/ml-mutant" />
         <item itemvalue="Go Test.go test github.com/rodrigodmd/ml-mutant" />
+        <item itemvalue="Go Test.TestVerticalLogic in github.com/rodrigodmd/ml-mutant" />
+        <item itemvalue="Go Test.TestHorizontalLogic in github.com/rodrigodmd/ml-mutant" />
         <item itemvalue="Go Test.TestNullDna in github.com/rodrigodmd/ml-mutant" />
         <item itemvalue="Go Test.TestHorizontalAndVerticalLogic in github.com/rodrigodmd/ml-mutant" />
-        <item itemvalue="Go Test.TestVerticalLogic in github.com/rodrigodmd/ml-mutant" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestHorizontalAndVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 51m 40s.xml">
-      <configuration name="TestHorizontalAndVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 27m 33s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="go_test_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 51m 53s.xml">
-      <configuration name="go test github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 27m 34s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestNullDna_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 52m 00s.xml">
-      <configuration name="TestNullDna in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 27m 36s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="go_test_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 52m 52s.xml">
-      <configuration name="go test github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 27m 37s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="go_test_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 52m 57s.xml">
-      <configuration name="go test github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 28m 17s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestHorizontalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 53m 15s.xml">
-      <configuration name="TestHorizontalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 28m 29s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestHorizontalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 53m 18s.xml">
-      <configuration name="TestHorizontalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 28m 41s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestHorizontalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 53m 22s.xml">
-      <configuration name="TestHorizontalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 28m 42s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestHorizontalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 53m 24s.xml">
-      <configuration name="TestHorizontalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 28m 44s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestHorizontalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 02h 53m 26s.xml">
-      <configuration name="TestHorizontalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestVerticalLogic_in_github_com_rodrigodmd_ml-mutant - 2018.09.24 at 03h 30m 36s.xml">
+      <configuration name="TestVerticalLogic in github.com/rodrigodmd/ml-mutant" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -313,27 +308,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mutant_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/evaluator/utils.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlMutant.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/testing/testing.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12120">
@@ -341,17 +315,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mutant_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlMutant.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluator/utils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/evaluator/init.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/evaluator/logics.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        <state relative-caret-position="262">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
         </state>
       </provider>
     </entry>
