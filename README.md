@@ -4,17 +4,24 @@ This is an example algorithm to resolve a mutant dna detection exercise
 
 ## Getting Started
 
+To run the test you only need to [install go](https://golang.org/doc/install).
 
+Then get the repository using go get:
 
+    go get github.com/rodrigodmd/ml-mutant
 
-### Run unit tests
+Go to your project folder:
 
-Run the following command:
+    cd $GOPATH/src/github.com/rodrigodmd/ml-mutant
+
+## Run unit tests
+
+To run the test you can use the following command:
 ```
 make test
 ```
 or
 
 ```
-go test ./... -v -cover
+go test ./... -v -cover -race
 ```
