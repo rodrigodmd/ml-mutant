@@ -1,37 +1,36 @@
 package evaluator
 
-import (
-	"fmt"
-)
-
 const (
-	MIN_COUNT           = 2
-	MIN_LETTER_SEQUENCE = 4
+	minCount          = 2
+	minLetterSequence = 4
 )
 
+// Wait method will wait until all the
+// evaluation go routines finish the execution
+// and returns the result
 func (e *evaluator) Wait() bool {
 	e.wg.Wait()
 	return e.isMutant
 }
 
+// Horizontal evaluation process
 func (e *evaluator) Horizontal() {
 	defer e.wg.Done()
-	defer fmt.Println("DONE Horizontal")
 
 	for _, row := range *e.dna {
 		if e.shouldStop() {
 			return
 		}
 		compare := e.charComparator()
-		for key, _ := range row {
+		for key := range row {
 			compare(row[key])
 		}
 	}
 }
 
+// Vertical evaluation process
 func (e *evaluator) Vertical() {
 	defer e.wg.Done()
-	defer fmt.Println("DONE Vertical")
 
 	length := len(*e.dna)
 	for x := 0; x < length; x++ {
@@ -46,9 +45,9 @@ func (e *evaluator) Vertical() {
 
 }
 
+// Diagonal Right evaluation process
 func (e *evaluator) DiagonalRight() {
 	defer e.wg.Done()
-	defer fmt.Println("DONE DiagonalRight")
 
 	length := len(*e.dna)
 	compare := e.charComparator()
@@ -56,7 +55,7 @@ func (e *evaluator) DiagonalRight() {
 		compare((*e.dna)[a][a])
 	}
 
-	for a := 1; a < length-MIN_LETTER_SEQUENCE-1; a++ {
+	for a := 1; a < length-minLetterSequence-1; a++ {
 		if e.shouldStop() {
 			return
 		}
@@ -70,9 +69,9 @@ func (e *evaluator) DiagonalRight() {
 
 }
 
+// Diagonal left evaluation process
 func (e *evaluator) DiagonalLeft() {
 	defer e.wg.Done()
-	defer fmt.Println("DONE DiagonalLeft")
 
 	length := len(*e.dna)
 	corr := length - 1
@@ -81,7 +80,7 @@ func (e *evaluator) DiagonalLeft() {
 		compare((*e.dna)[a][corr-a])
 	}
 
-	for a := 1; a < length-MIN_LETTER_SEQUENCE-1; a++ {
+	for a := 1; a < length-minLetterSequence-1; a++ {
 		if e.shouldStop() {
 			return
 		}

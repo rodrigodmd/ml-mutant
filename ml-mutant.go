@@ -2,13 +2,20 @@ package mlmutant
 
 import (
 	"errors"
-	"fmt"
-	"strings"
+	"regexp"
 	"time"
 
 	"github.com/rodrigodmd/ml-mutant/evaluator"
+	"log"
 )
 
+// IsMutant method will verify the dna array structure
+// Checking structure and finding sequence in the following
+// logic:
+// - Horizontal
+// - Vertical
+// - Diagonal right
+// - Diagonal left
 func IsMutant(dna []string) (bool, error) {
 	start := time.Now()
 
@@ -16,37 +23,36 @@ func IsMutant(dna []string) (bool, error) {
 		return false, errors.New("Invalid DNA structure")
 	}
 
-	evaluate := evaluator.New(&dna)
+	evaluate := evaluator.New(&dna, 4)
 	go evaluate.Horizontal()
 	go evaluate.Vertical()
 	go evaluate.DiagonalLeft()
 	go evaluate.DiagonalRight()
 
 	result := evaluate.Wait()
-
-	fmt.Println(time.Since(start))
+	log.Print(time.Since(start))
 	return result, nil
 }
 
+// checkStructure method checks the dna structure
+// to se if it has the basic structure
 func checkStructure(dna *[]string) bool {
 	length := len(*dna)
 	if length == 0 {
 		return false
 	}
 
+	invalidDnaLetter := regexp.MustCompile(`[^ATCG]`).MatchString
 	for _, row := range *dna {
+		// Height should be equal to width for every row
 		if len(row) != length {
 			return false
 		}
 
-		// TODO: Modify this logic to use regex
-		// var IsLetter = regexp.MustCompile(`^[a-zA-Z]+$`).MatchString
-		for _, letter := range row {
-			if !strings.Contains("ATCG", string(letter)) {
-				return false
-			}
+		// Chould contain only DNA letters
+		if invalidDnaLetter(row) {
+			return false
 		}
-
 	}
 	return true
 }
