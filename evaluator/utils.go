@@ -3,6 +3,9 @@ package evaluator
 // shouldStop method verifies the flag to stop
 // all running evaluation process
 func (e *evaluator) shouldStop() bool {
+	e.mutex.Lock()
+	defer e.mutex.Unlock()
+
 	return e.isMutant
 }
 
