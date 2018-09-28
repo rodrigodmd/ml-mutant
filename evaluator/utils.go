@@ -27,13 +27,14 @@ func (e *evaluator) charComparator() func(uint8) {
 	var lastChar uint8 = ' '
 	count := 1
 
+	// log.Printf("Restart count")
 	return func(char uint8) {
 		if lastChar == char {
 			count++
 		} else {
 			count = 1
 		}
-
+		// log.Printf("char "+string(char)+"  count: %d", count)
 		if count == minLetterSequence {
 			e.foundSequence()
 		}
