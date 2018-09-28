@@ -1,5 +1,7 @@
 package evaluator
 
+import "log"
+
 // shouldStop method verifies the flag to stop
 // all running evaluation process
 func (e *evaluator) shouldStop() bool {
@@ -27,14 +29,14 @@ func (e *evaluator) charComparator() func(uint8) {
 	var lastChar uint8 = ' '
 	count := 1
 
-	// log.Printf("Restart count")
+	log.Printf("Restart count")
 	return func(char uint8) {
 		if lastChar == char {
 			count++
 		} else {
 			count = 1
 		}
-		// log.Printf("char "+string(char)+"  count: %d", count)
+		log.Printf("char "+string(char)+"  count: %d", count)
 		if count == minLetterSequence {
 			e.foundSequence()
 		}

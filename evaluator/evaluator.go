@@ -55,7 +55,7 @@ func (e *evaluator) DiagonalRight() {
 		compare((*e.dna)[a][a])
 	}
 
-	for a := 1; a < length-minLetterSequence-1; a++ {
+	for a := 1; a < length-minLetterSequence+1; a++ {
 		if e.shouldStop() {
 			return
 		}
@@ -80,15 +80,15 @@ func (e *evaluator) DiagonalLeft() {
 		compare((*e.dna)[a][corr-a])
 	}
 
-	for a := 1; a < length-minLetterSequence-1; a++ {
+	for a := 1; a < length-minLetterSequence+1; a++ {
 		if e.shouldStop() {
 			return
 		}
 		compareUp := e.charComparator()
 		compareDown := e.charComparator()
 		for b := 0; a+b < length; b++ {
-			compareUp((*e.dna)[a][corr-a-b])
-			compareDown((*e.dna)[a+b][corr-a])
+			compareUp((*e.dna)[b][corr-a-b])
+			compareDown((*e.dna)[a+b][corr-b])
 		}
 	}
 }
